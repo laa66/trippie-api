@@ -23,3 +23,7 @@ C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\refint\Tripp
 C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\TrippieApi.pdb
 C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\TrippieApi.genruntimeconfig.cache
 C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\ref\TrippieApi.dll
+C:\Users\maxsc\desktop\local-repository\TrippieApi\bin\Debug\net8.0\GeoCoordinate.NetCore.dll
+C:\Users\maxsc\desktop\local-repository\TrippieApi\bin\Debug\net8.0\KdTreeLib.dll
+C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\TrippieApi.csproj.AssemblyReference.cache
+C:\Users\maxsc\desktop\local-repository\TrippieApi\obj\Debug\net8.0\TrippieApi.csproj.CopyComplete

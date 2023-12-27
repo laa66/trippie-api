@@ -8,6 +8,7 @@ builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 builder.Services.AddTransient<IPoiApiService, PoiApiService>();
+builder.Services.AddTransient<ITripGenerationService, TripGenerationService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

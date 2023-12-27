@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hBb4xhm1XcNbXNJEfaIvkJJvdgN/FtV0WrvXTiyPXlc1gLQ0Do2fHVVsfwyjst4vD7TpMxxhvx57U1DVj3clLA==",
+  "dgSpecHash": "dxwU+kriZ2F4KqE6XuM1Gt3BGZ0XrR9YoSR6Sdj90tQhv+FAMUcPOxnJTSceU/2w7yyGgyXXUPbs5mDdHfmY5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maxsc\\.nuget\\packages\\geocoordinate.netcore\\1.0.0.1\\geocoordinate.netcore.1.0.0.1.nupkg.sha512",
+    "C:\\Users\\maxsc\\.nuget\\packages\\kdtree\\1.4.1\\kdtree.1.4.1.nupkg.sha512"
+  ],
   "logs": []
 }

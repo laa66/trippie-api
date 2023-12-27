@@ -6,13 +6,14 @@ namespace Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class TripGenerationController(IPoiApiService poiApiService) : ControllerBase 
+public class TripGenerationController(ITripGenerationService tripGenerationService) : ControllerBase 
 {
-    private readonly IPoiApiService _poiApiService = poiApiService;
+    private readonly ITripGenerationService _tripGenerationService = tripGenerationService;
 
     [HttpGet]
     public async Task<IActionResult> GetTrip() 
     {
-       return Ok(await _poiApiService.GetPoiCollection("mountain_hut"));
+        IEnumerable<TripPoint> points = await _tripGenerationService.CreateTrip(10, 17.07674062911932, 51.109818062431835, ["mountain_hut"]);
+        return Ok(points);
     }
 }

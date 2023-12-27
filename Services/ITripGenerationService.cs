@@ -2,16 +2,17 @@ using Models;
 
 namespace Services;
 
-public interface ITripGenerationService {
+public interface ITripGenerationService 
+{
 
-    IEnumerable<TripPoint> CreateTrip(int size, 
+    Task<IEnumerable<TripPoint>> CreateTrip(int size, 
     double longitude, 
     double latitude, 
     string[] categories);
 
-    IEnumerable<TripPoint> OptimizeTrip(IEnumerable<TripPoint> tripPoints);
+    Task<IEnumerable<TripPoint>> OptimizeTrip(double startLongitude, double startLatitude, IEnumerable<TripPoint> tripPoints, int size);
 
-    IEnumerable<TripPoint> GetSingleCategoryTrip(double longitude,
+    Task<IEnumerable<TripPoint>> GetSingleCategoryTrip(double longitude,
     double latitude,
     string category);
 }
