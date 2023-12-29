@@ -30,10 +30,9 @@ public class TripGenerationService(IPoiApiService poiApiService) : ITripGenerati
     {
         var optimizedTrip = new List<TripPoint>();
 
-
         var tree = new KdTree<double, TripPoint>(2, new DoubleMath());
         foreach (var point in tripPoints) tree.Add(point.Coordinates, point);
-
+        
         for (int i=0;i<size;i++)
         {
             KdTreeNode<double, TripPoint>[] node;

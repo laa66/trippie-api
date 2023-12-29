@@ -1,3 +1,4 @@
+using Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Services;
@@ -10,10 +11,10 @@ public class TripGenerationController(ITripGenerationService tripGenerationServi
 {
     private readonly ITripGenerationService _tripGenerationService = tripGenerationService;
 
-    [HttpGet]
-    public async Task<IActionResult> GetTrip() 
+    [HttpPost]
+    public async Task<IActionResult> GetTrip([FromQuery] int size, [FromQuery] double longitude, [FromQuery] double latitude, [FromBody] PoisDTO pois) 
     {
-        IEnumerable<TripPoint> points = await _tripGenerationService.CreateTrip(10, 17.07674062911932, 51.109818062431835, ["mountain_hut"]);
+        IEnumerable<TripPoint> points = await _tripGenerationService.CreateTrip(size, longitude, latitude, pois.Pois);
         return Ok(points);
     }
 }

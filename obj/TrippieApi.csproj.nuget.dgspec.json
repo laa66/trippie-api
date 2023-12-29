@@ -47,6 +47,10 @@
             "KdTree": {
               "target": "Package",
               "version": "[1.4.1, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
             }
           },
           "imports": [
