@@ -1,4 +1,5 @@
 using Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Services;
 
@@ -18,10 +19,13 @@ builder.Services.AddDbContext<TrippieContext>(
 );
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<User>()
-    .AddEntityFrameworkStores<TrippieContext>();
+    .AddEntityFrameworkStores<TrippieContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddTransient<IPoiApiService, PoiApiService>();
 builder.Services.AddTransient<ITripGenerationService, TripGenerationService>();
+builder.Services.AddTransient<IUserService, UserService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

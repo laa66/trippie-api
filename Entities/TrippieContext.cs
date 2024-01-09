@@ -1,13 +1,11 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Entities;
 
 public class TrippieContext(DbContextOptions<TrippieContext> dbContextOptions) : IdentityDbContext<User>(dbContextOptions)
 {
-    public DbSet<User> Users { get; set; }
+    public override DbSet<User> Users { get; set; }
     public DbSet<Trip> Trips { get; set; }
     public DbSet<TripPoint> TripPoints { get; set; }
 

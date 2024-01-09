@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/trip/generation")]
 public class TripGenerationController(ITripGenerationService tripGenerationService, TrippieContext trippieContext) : ControllerBase 
 {
     private readonly ITripGenerationService _tripGenerationService = tripGenerationService;
