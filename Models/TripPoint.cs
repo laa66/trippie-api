@@ -2,14 +2,26 @@ using System.Text.Json.Serialization;
 
 namespace Models;
 
-public class TripPoint(double longitude, double latitude, string name, string fullAddress)
+public class TripPoint
 {
-    public double[] Coordinates { get; } = [longitude, latitude];
+    public TripPoint()
+    {
 
-    public string Name { get; } = name;
+    }
+
+    public TripPoint(double longitude, double latitude, string name, string fullAddress)
+    {
+        Coordinates = [longitude, latitude];
+        Name = name;
+        FullAddress = fullAddress;
+
+    }
+    public double[] Coordinates { get; }
+
+    public string Name { get; } 
 
     [JsonPropertyName("full_address")]
-    public string FullAddress { get; } = fullAddress;
+    public string FullAddress { get; }
 
     public override string ToString()
     {

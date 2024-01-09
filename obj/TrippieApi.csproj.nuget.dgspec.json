@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {}
+    "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {
+    "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
+        "projectUniqueName": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
         "projectName": "TrippieApi",
-        "projectPath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
+        "projectPath": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
         "packagesPath": "C:\\Users\\maxsc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\obj\\",
+        "outputPath": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxsc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,9 +48,31 @@
               "target": "Package",
               "version": "[1.4.1, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
