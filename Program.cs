@@ -25,6 +25,7 @@ builder.Services.AddIdentityApiEndpoints<User>()
 builder.Services.AddTransient<IPoiApiService, PoiApiService>();
 builder.Services.AddTransient<ITripGenerationService, TripGenerationService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ITripService, TripService>();
 
 var app = builder.Build();
 

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dtos;
 
-public class UserDTO(string email, string password, string confirmPassword, string username)
+public class UserDTO(string email, string password, string confirmPassword, string userLogin)
 {
     [Required]
     public string Email { get; set; } = email;
@@ -15,7 +15,7 @@ public class UserDTO(string email, string password, string confirmPassword, stri
     public string ConfirmPassword { get; set; } = confirmPassword;
 
     [Required]
-    public string Username { get; set; } = username;
+    public string UserLogin { get; set; } = userLogin;
 
 
 }

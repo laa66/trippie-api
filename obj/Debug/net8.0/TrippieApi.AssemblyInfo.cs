@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrippieApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddf52a451c105071f7b34d61dca4b61d25cf637e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f667fc21fa35e3e5c1c5a2c68919b75ba8aa59e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrippieApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrippieApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
