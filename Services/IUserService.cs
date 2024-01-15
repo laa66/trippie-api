@@ -6,7 +6,8 @@ namespace Services;
 
 public interface IUserService 
 {
-    public Task<User> GetUserAsync(string id);
+    public User GetUser(string id);
     public Task<IdentityResult> Register(UserDTO userDTO);
+    public IEnumerable<User> GetUsers();
 
 }

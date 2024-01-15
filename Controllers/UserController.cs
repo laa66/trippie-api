@@ -1,4 +1,7 @@
+using System.Security.Claims;
 using Dtos;
+using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -17,5 +20,20 @@ public class UserController(IUserService userService) : ControllerBase
         return result.Succeeded ? 
             Ok(new { Message = "User registered successfully" }) : 
             BadRequest(new { Message = "Registration failed", result.Errors });
+    }
+
+    [HttpGet("all")]
+    [Authorize]
+    public IActionResult GetUsers()
+    {
+        return Ok(_userService.GetUsers());
+    }
+
+    [HttpGet("me")]
+    [Authorize]
+    public IActionResult GetUser()
+    {
+        string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("User is not available");
+        return Ok(_userService.GetUser(id));
     }
 }

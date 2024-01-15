@@ -2,6 +2,7 @@ using Entities;
 using Microsoft.AspNetCore.Identity;
 using Dtos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services;
 
@@ -10,9 +11,9 @@ public class UserService([FromServices] IServiceProvider serviceProvider, Trippi
     private readonly IServiceProvider _serviceProvider = serviceProvider;
     private readonly TrippieContext _trippieContext = trippieContext;
 
-    public async Task<User> GetUserAsync(string id)
+    public User GetUser(string id)
     {
-        var user  = await _trippieContext.Users.FindAsync(id);
+        var user  = _trippieContext.Users.Find(id);
         return user ?? throw new Exception("User cannot be found");
     }
 
@@ -29,5 +30,10 @@ public class UserService([FromServices] IServiceProvider serviceProvider, Trippi
         };
 
         return await userManager.CreateAsync(user, userDTO.Password);
+    }
+
+    public IEnumerable<User> GetUsers()
+    {
+        return [.. _trippieContext.Users];
     }
 }

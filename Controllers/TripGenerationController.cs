@@ -26,7 +26,7 @@ public class TripGenerationController(ITripGenerationService tripGenerationServi
         IEnumerable<Models.TripPoint> points = await _tripGenerationService.CreateTrip(size, longitude, latitude, pois.Pois);
         string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("User is not available");
         
-        var user = await _userService.GetUserAsync(id);
+        var user = _userService.GetUser(id);
 
         _tripService.Save(user, new Trip {
             TripId = 0,
