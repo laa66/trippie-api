@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {}
+    "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {
+    "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
+        "projectUniqueName": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
         "projectName": "TrippieApi",
-        "projectPath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
+        "projectPath": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
         "packagesPath": "C:\\Users\\maxsc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\obj\\",
+        "outputPath": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxsc\\AppData\\Roaming\\NuGet\\NuGet.Config",

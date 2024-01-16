@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Dtos;
 using Entities;
+using Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -31,9 +32,16 @@ public class UserController(IUserService userService) : ControllerBase
 
     [HttpGet("me")]
     [Authorize]
-    public IActionResult GetUser()
+    public IActionResult GetCurrentUser()
     {
-        string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("User is not available");
+        string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new UserNotFoundException("User is not available");
+        return Ok(_userService.GetUser(id));
+    }
+
+    [HttpGet]
+    [Authorize]
+    public IActionResult GetUser([FromQuery] string id)
+    {            
         return Ok(_userService.GetUser(id));
     }
 }

@@ -1,3 +1,4 @@
+using Exceptions;
 using KdTree;
 using KdTree.Math;
 using Models;
@@ -20,14 +21,23 @@ public class TripGenerationService(IPoiApiService poiApiService) : ITripGenerati
 
         return await OptimizeTrip(longitude, latitude, tripPoints, size);
     }
-
     public async Task<IEnumerable<TripPoint>> GetSingleCategoryTrip(double longitude, double latitude, string category)
     {
-        return await _poiApiService.GetPoiCollection(category, longitude, latitude);
+        try
+        {
+            return await _poiApiService.GetPoiCollection(category, longitude, latitude);
+        } 
+
+        catch (HttpRequestException exception)
+        {
+            throw new PoiApiException(exception.Message, exception.InnerException, exception.StatusCode);
+        }
     }
 
     public Task<IEnumerable<TripPoint>> OptimizeTrip(double startLongitude, double startLatitude, IEnumerable<TripPoint> tripPoints, int size)
     {
+        if (!tripPoints.Any()) return Task.FromResult<IEnumerable<TripPoint>>([]);
+
         var optimizedTrip = new List<TripPoint>();
 
         var tree = new KdTree<double, TripPoint>(2, new DoubleMath());

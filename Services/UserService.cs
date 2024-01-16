@@ -2,7 +2,7 @@ using Entities;
 using Microsoft.AspNetCore.Identity;
 using Dtos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Exceptions;
 
 namespace Services;
 
@@ -14,12 +14,12 @@ public class UserService([FromServices] IServiceProvider serviceProvider, Trippi
     public User GetUser(string id)
     {
         var user  = _trippieContext.Users.Find(id);
-        return user ?? throw new Exception("User cannot be found");
+        return user ?? throw new UserNotFoundException("User cannot be found");
     }
 
     public async Task<IdentityResult> Register(UserDTO userDTO)
     {
-        var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
+            var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
 
         User user = new()
         {
@@ -29,7 +29,10 @@ public class UserService([FromServices] IServiceProvider serviceProvider, Trippi
             UserLogin = userDTO.UserLogin
         };
 
-        return await userManager.CreateAsync(user, userDTO.Password);
+        var result = await userManager.CreateAsync(user, userDTO.Password);
+
+        if (!result.Succeeded) throw new RegistrationFailedException($"User cannot be registered: {string.Join(",", result.Errors)}");
+        return result;
     }
 
     public IEnumerable<User> GetUsers()

@@ -6,7 +6,7 @@ public class PoiApiService(IHttpClientFactory httpClientFactory, IConfiguration 
 {
     private readonly HttpClient _httpClient = httpClientFactory.CreateClient();
     private readonly IConfiguration _configuration = configuration;
-    public async Task<IEnumerable<TripPoint>> GetPoiCollection(string category, double longitude, double latitude)
+    public async Task<IEnumerable<TripPoint>> GetPoiCollection(string category, double longitude, double latitude) 
     {
         string? token = _configuration.GetValue<string>("MAP_API_PUBLIC_TOKEN");
 

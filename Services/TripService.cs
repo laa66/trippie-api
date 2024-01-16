@@ -1,4 +1,5 @@
 using Entities;
+using Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Services;
@@ -9,7 +10,7 @@ public class TripService(TrippieContext trippieContext) : ITripService
 
     public bool Delete(int id)
     {
-        var trip = _trippieContext.Trips.Find(id);
+        var trip = Find(id);
         _trippieContext.Trips.Remove(trip);
         var result = _trippieContext.SaveChanges();
         return result == 1;
@@ -18,20 +19,20 @@ public class TripService(TrippieContext trippieContext) : ITripService
     public Trip Find(int id)
     {
         var result = _trippieContext.Trips.Find(id);
-        return result ?? throw new Exception("Trip not found in database");
+        return result ?? throw new TripNotFoundException("Trip not found in repository");
     }
 
     public IEnumerable<Trip> FindAll()
     {
-        var result = _trippieContext.Trips
+        return _trippieContext.Trips
             .Include(t => t.TripPoints)
             .ToList();
-        return result;
     }
 
     public IEnumerable<Trip> FindUserTrips(string id)
     {
-        return _trippieContext.Trips.Where(u => u.Id == id)
+        return _trippieContext.Trips
+            .Where(u => u.Id == id)
             .Include(p => p.TripPoints);
     }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sx9DHmbBmpmZjRjSbJmp9RzSwBQoUYDdebzNV0hm0pj2GwzyFTCE11DYDnC5/ookDi1aUFeWZkOn2YXVPyY1Mw==",
+  "dgSpecHash": "GSqIpJpPmMZx1WWr6l3O2blYVcBfX17KtcYeZ3LUg8EwgoWuJAPQFBHjr+w1x+JW5Q4G1UpsP4WBAfx/xW9wGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxsc\\desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
+  "projectFilePath": "C:\\Users\\maxsc\\Desktop\\local-repository\\TrippieApi\\TrippieApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxsc\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\maxsc\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
