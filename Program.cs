@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Entities;
+using Handlers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Services;
@@ -26,6 +27,10 @@ builder.Services.AddIdentityApiEndpoints<User>()
     .AddEntityFrameworkStores<TrippieContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddExceptionHandler<NotFoundExceptionHandler>();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 builder.Services.AddTransient<IPoiApiService, PoiApiService>();
 builder.Services.AddTransient<ITripGenerationService, TripGenerationService>();
 builder.Services.AddTransient<IUserService, UserService>();
@@ -41,6 +46,7 @@ if (app.Environment.IsDevelopment())
 
 // Configure the HTTP request pipeline.
 
+app.UseExceptionHandler();
 app.MapIdentityApi<User>();
 app.MapControllers();
 app.UseHttpsRedirection();

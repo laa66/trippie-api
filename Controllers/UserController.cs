@@ -41,7 +41,7 @@ public class UserController(IUserService userService) : ControllerBase
     [HttpGet]
     [Authorize]
     public IActionResult GetUser([FromQuery] string id)
-    {            
+    {   
         return Ok(_userService.GetUser(id));
     }
 }

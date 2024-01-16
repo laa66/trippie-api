@@ -6,6 +6,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Exceptions;
 
 namespace Controllers;
 
@@ -24,7 +25,7 @@ public class TripGenerationController(ITripGenerationService tripGenerationServi
     public async Task<IActionResult> GetTrip([FromQuery] int size, [FromQuery] double longitude, [FromQuery] double latitude, [FromBody] PoisDTO pois) 
     {
         IEnumerable<Models.TripPoint> points = await _tripGenerationService.CreateTrip(size, longitude, latitude, pois.Pois);
-        string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new Exception("User is not available");
+        string? id = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new UserNotFoundException("User is not available");
         
         var user = _userService.GetUser(id);
 

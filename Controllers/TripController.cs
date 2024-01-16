@@ -1,4 +1,3 @@
-using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -8,11 +7,6 @@ namespace Controllers;
 [ApiController]
 [Route("api/trip")]
 [Authorize]
-/*
-    Global exception handling
-    Unit tests
-    
-*/
 public class TripController(ITripService tripService) : ControllerBase
 {
     private readonly ITripService _tripService = tripService;
