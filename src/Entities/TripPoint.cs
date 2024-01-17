@@ -19,7 +19,7 @@ public class TripPoint
     public int TripPointId { get; set; }
     public int TripId { get; set; }
 
-    public Trip Trip { get; set; }
+    public Trip? Trip { get; set; }
 
     public double Longitude { get; set; }
     public double Latitude { get; set; }

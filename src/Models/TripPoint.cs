@@ -16,15 +16,15 @@ public class TripPoint
         FullAddress = fullAddress;
 
     }
-    public double[] Coordinates { get; }
+    public double[]? Coordinates { get; }
 
-    public string Name { get; } 
+    public string? Name { get; } 
 
     [JsonPropertyName("full_address")]
-    public string FullAddress { get; }
+    public string? FullAddress { get; }
 
     public override string ToString()
     {
-        return "Coordinates: " + Coordinates[0] + ". " + Coordinates[1] + ", Name: " + Name + ", FullAddress: " + FullAddress;
+        return "Coordinates: " + Coordinates?[0] + ". " + Coordinates?[1] + ", Name: " + Name + ", FullAddress: " + FullAddress;
     }
 }
