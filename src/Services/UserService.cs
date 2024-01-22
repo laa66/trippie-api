@@ -19,7 +19,7 @@ public class UserService([FromServices] IServiceProvider serviceProvider, Trippi
 
     public async Task<IdentityResult> Register(UserDTO userDTO)
     {
-            var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
+        var userManager = _serviceProvider.GetRequiredService<UserManager<User>>();
 
         User user = new()
         {

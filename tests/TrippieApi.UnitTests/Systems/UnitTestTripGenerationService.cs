@@ -10,7 +10,7 @@ using Exceptions;
 namespace TrippieApi.UnitTests.Systems;
 
 
-public class TestTripGenerationService(ITestOutputHelper outputHelper)
+public class UnitTestTripGenerationService(ITestOutputHelper outputHelper)
 {
     private readonly ITestOutputHelper _outputHelper = outputHelper;
 
