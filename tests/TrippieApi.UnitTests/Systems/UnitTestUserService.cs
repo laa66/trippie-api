@@ -33,6 +33,8 @@ public class UnitTestUserService
         var result = sut.GetUser("user");
 
         Assert.Equal(testUser, result);
+
+        context.Database.EnsureDeleted();
     }
 
     [Fact]
@@ -72,6 +74,8 @@ public class UnitTestUserService
         context.Users.Add(testUser2);
         context.SaveChanges();
 
+        
+
         var sut = new UserService(mockServiceProvider.Object, context);
 
         var result = sut.GetUsers().ToArray();
@@ -79,5 +83,7 @@ public class UnitTestUserService
         Assert.Equal(2, result.Length);
         Assert.Equal("user1", result[0].Id);
         Assert.Equal("user2", result[1].Id);
+
+        context.Database.EnsureDeleted();
     }
 }
