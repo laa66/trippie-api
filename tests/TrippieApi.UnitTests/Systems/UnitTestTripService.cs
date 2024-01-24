@@ -138,9 +138,7 @@ public class UnitTestTripService(ITestOutputHelper outputHelper)
         var trip = TripFixtures.GetTrip();
         trip.TripId = 0;
         var result = sut.Save(user, trip);
-
-        context.SaveChanges();
-
+        
         Assert.Equal(1, result.UserTrips.First().TripId);
 
         context.Database.EnsureDeleted();

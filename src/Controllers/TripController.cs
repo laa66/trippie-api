@@ -20,8 +20,7 @@ public class TripController(ITripService tripService) : ControllerBase
     [HttpDelete]
     public IActionResult DeleteTrip([FromQuery] int id)
     {
-        _tripService.Delete(id);
-        return NoContent();
+        return _tripService.Delete(id) ? NoContent() : NotFound();
     }
 
     [HttpGet("all")]
