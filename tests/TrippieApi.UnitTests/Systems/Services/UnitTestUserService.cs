@@ -5,7 +5,7 @@ using Moq;
 using Services;
 using Xunit;
 
-namespace TrippieApi.UnitTests.Systems;
+namespace TrippieApi.UnitTests.Systems.Services;
 
 public class UnitTestUserService
 {

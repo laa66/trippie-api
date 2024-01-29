@@ -7,7 +7,7 @@ using TrippieApi.UnitTests.Fixtures;
 using Xunit.Abstractions;
 using Exceptions;
 
-namespace TrippieApi.UnitTests.Systems;
+namespace TrippieApi.UnitTests.Systems.Services;
 
 
 public class UnitTestTripGenerationService(ITestOutputHelper outputHelper)

@@ -1,9 +1,7 @@
 using Dtos;
 using Microsoft.AspNetCore.Mvc;
-using Models;
 using Services;
 using Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Exceptions;

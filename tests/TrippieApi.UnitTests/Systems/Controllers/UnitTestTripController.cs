@@ -7,7 +7,7 @@ using Services;
 using TrippieApi.UnitTests.Fixtures;
 using Xunit;
 
-namespace TrippieApi.UnitTests.Systems;
+namespace TrippieApi.UnitTests.Systems.Controllers;
 
 public class UnitTestTripController
 {
