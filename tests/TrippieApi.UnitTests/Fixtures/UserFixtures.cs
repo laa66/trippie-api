@@ -8,4 +8,11 @@ public static class UserFixtures
         UserLogin = "userlogin1",
         JoinDate = new DateTime(),
     };
+
+    public static List<User> GetUsers() =>
+    [
+        new User(),
+        new User(),
+        new User()  
+    ];
 }
