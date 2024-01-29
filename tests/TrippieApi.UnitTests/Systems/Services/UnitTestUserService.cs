@@ -12,7 +12,7 @@ public class UnitTestUserService
 
 
     [Fact]
-    public void GetUser_ShouldGetUserById()
+    public void GetUser_Should_GetUserById()
     {
         var testUser = new User
         {
@@ -38,7 +38,7 @@ public class UnitTestUserService
     }
 
     [Fact]
-    public void GetUser_ShouldThrowUserNotFoundException()
+    public void GetUser_Should_ThrowUserNotFoundException()
     {
         var mockServiceProvider = new Mock<IServiceProvider>();
         var options = new DbContextOptionsBuilder<TrippieContext>()
@@ -52,7 +52,7 @@ public class UnitTestUserService
     }
 
     [Fact]
-    public void GetUser_ShouldGetUsers()
+    public void GetUser_Should_GetUsers()
     {
         var testUser1 = new User
         {
